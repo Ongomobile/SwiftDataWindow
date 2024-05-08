@@ -10,23 +10,20 @@ import SwiftData
 
 @main
 struct SwiftDataWindowApp: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
-    }()
-
+   
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
+                .modelContainer(for: [ItemModel.self])
         }
-        .modelContainer(sharedModelContainer)
+        
+        // I can't figure out how to pass an ItemModel to WindowGroup
+       
+        // Example for WindowGroup documentation
+        // A window group that displays messages.
+         //WindowGroup(for: Message.ID.self) { $messageID in
+             //MessageDetail(messageID: messageID)
+        // }
+        
     }
 }
