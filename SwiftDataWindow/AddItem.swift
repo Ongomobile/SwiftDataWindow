@@ -37,7 +37,7 @@ struct AddItem: View {
                 TextField("Name", text: $name)
                 
                 HStack{
-                    Button("Save Trade") {
+                    Button("Save Item") {
                         // Action to save the Item
                         saveItem()
                         dismiss()
