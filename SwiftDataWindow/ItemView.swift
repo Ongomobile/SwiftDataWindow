@@ -14,7 +14,7 @@ struct ItemView: View {
         VStack{
             Text("Name: \(item.name)")
             Text("Description: \(item.desc)")
-            Text("Name: \(item.timestamp)")
+            Text("Date: \(item.timestamp)")
         }
         .frame(width:600, height:300)
     }

@@ -16,14 +16,16 @@ struct SwiftDataWindowApp: App {
             RootView()
                 .modelContainer(for: [ItemModel.self])
         }
-        
-        // I can't figure out how to pass an ItemModel to WindowGroup
-       
-        // Example for WindowGroup documentation
+        // Example from WindowGroup documentation
         // A window group that displays messages.
          //WindowGroup(for: Message.ID.self) { $messageID in
              //MessageDetail(messageID: messageID)
         // }
         
+        // I can't figure out how to pass an ItemModel to WindowGroup
+        //WindowGroup(for: [ItemModel.self]) { $item in
+        // ItemView(item:$item)
+        //   .modelContainer(for: [ItemModel.self])
+        // }
     }
 }
